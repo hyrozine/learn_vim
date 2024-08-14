@@ -119,4 +119,27 @@ p : put
 
 while using the autoindent in python and want to paste thing from other file or web, need to "set paste" to avoid abnormal indent. After that, "set nopaste" again to recover autoindent.
 
-"add / "byiw use "+a~z to put the copy or cut content into a register. And if not specified, the content will be saved in an uname register.
+"add / "byiw /... use "+a~z to put or yank content from/into a register. And if not specified, the content will be saved in an unamed register.
+
+"+ copy the content into system clipboard.
+default yank register is "0
+:set clipboard=unnamed  don't need to specify "+
+"% file name
+". last insert context
+
+:e! cancel edit 
+
+
+macro
+
+q{register} start recording macro, also q to stop recording macro
+@{register} replay macro
+
+ctrl + n  complete a word
+ctrl + x ctrl + f complete file name
+ctrl + x ctrl + o complete code
+
+vim filename filename -O  open two files in two windows
+
+:colorscheme  set vim color
+
