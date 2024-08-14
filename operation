@@ -1,0 +1,122 @@
+a append 
+i insert 
+o open a line below
+
+A append after line
+I insert before line
+O append a line above
+
+:% s/something/anotherthing/g
+s(ubsitute) something with anotherthing in g(lobal)
+:[range]s[ubsitute]/{pattern}/{string}/[flags]
+the '%' means in total file, num, anothernum means the num to anothernum lines.
+flag: g(lobal) c(omfirm) n(umber)
+e.g.:
+	10,20 s/sth/other/g
+	% s/sth//n  -> can be used to get the total number of sth
+	% s/\<sth\>/other/g  -> in some cases, we need to subsitute the word "sth" precisely, and not subisitute the word "sth" contain sth 
+
+v check box, move cursor to select text
+V check a block of box
+
+in motion:
+ctrl + h  delete the last letter before cursor
+ctrl + u  delete letters before the cursor in this line
+ctrl + w  delete letters before the cursor in this word
+ 
+gi jump to the last edit
+
+w/W move to the beginning of the next word/WORD 
+e/E move to the end of the next word/WORD
+b/B back to the beginning of previous word/WORD
+here the "word" means the word divided by the word its own, the "WORD" means words divided by blank character
+
+f move to the specified char in this line 
+t move to the char before the specified char in this line
+
+0 move to the first char in this line 
+^ move to the first non blank char in this line
+
+$ move to the last char in this line
+g_ move to the last non blank char in this line 
+
+() move among sentences
+{} move among passages
+use ; and , to change among letters, where the cursor on
+
+gg/G move to the beginning/end of the file
+ctrl + o to quick come back to history movement
+
+H/M/L move to the head/mid/lower of the screen
+
+ctrl + u/f  page up/down
+zz put the cursor line in the mid of the screen 
+
+in normal:
+x delete a letter
+d delete, which can take recombination action
+e.g: 
+   dw delete a word
+   daw delete around word
+   diw delete word but remain the blank char
+   dt"sth" delete until sth 
+   d$ delete the word after the cursor
+   d0 delete the word before the cursor
+
+w word s sentence p passage 
+use ciw caw ciW caW cis etc. to quickly change to the text
+
+for the pairwise punctuations, use ci< ca( etc. to change the text between two punctuations.
+here, i means the change doesn't include the punctuation, a is the opposite.
+
+u undo
+
+r replace a letter with another letter
+R replace letters utils you choose to stop and exit this mode
+
+s delete current letter and enter insert mode
+S delete current line and enter insert mode 
+
+c change sth., enter insert mode     such as  caw change a word, start insert     ct"sth" delete util sth, start insert
+C delete a line, enter insert mode 
+
+also, these operation can be repeated times by using number before operation, such 2dd(delete 2 lines), 4x(delete 4 chars), etc.
+
+/ or ? forward or backward search
+n/N jump to next/last match
+
+* or # match current word(where the cursor on) forward and backward
+
+
+buffer and window
+
+buffer:
+:e file_name	open a buffer
+:ls list all buffers
+:bpre :bnext :bfirst :blast  switch between buffers
+:b buffer_name	jump to the buffer depends on the name
+window:
+<ctrl+w>s  or :sp  horizontal split
+<ctrl+w>v  or  vs  vertical split
+:sp/vs filename  split the window and edit the specified file
+use <ctrl+w> + h/j/k/l  switch between windows 
+<ctrl+w> + <ctrl+w> switch to next buffer
+use <ctrl+w> + H/J/K/L  switch between windows 
+
+tab
+
+:tabe[dit] filename  open a tab
+also :tabnew filename could do the same as above
+<ctrl+w>T  put the current window into a tab
+:tabc[lose]  close current tab
+:tabo[nly]   close all the other tabs, remain current tab
+
+copy and paste
+
+y : yank
+d : delete
+p : put
+
+while using the autoindent in python and want to paste thing from other file or web, need to "set paste" to avoid abnormal indent. After that, "set nopaste" again to recover autoindent.
+
+"add / "byiw use "+a~z to put the copy or cut content into a register. And if not specified, the content will be saved in an uname register.
