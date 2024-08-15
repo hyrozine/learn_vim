@@ -142,4 +142,4 @@ ctrl + x ctrl + o complete code
 vim filename filename -O  open two files in two windows
 
 :colorscheme  set vim color
-
+:qa quit all files
