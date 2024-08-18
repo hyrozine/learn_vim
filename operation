@@ -143,3 +143,16 @@ vim filename filename -O  open two files in two windows
 
 :colorscheme  set vim color
 :qa quit all files
+
+> or <  indent or unindent in visual or normal
+
+s/^\s*//  delete trailing whitespace before sentence
+s/\s*$//  delete trailing whitespace after sentence
+
+:sh enter a tempory shell, ctrl+d or exit to return to vim 
+:!(command) use this format to run the command in shell
+
+gf go to file 
+
+:terminal for vim > 8.1, this can open a terminal in vim
+
