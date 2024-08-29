@@ -1,0 +1,18 @@
+<leader> t   open tagbar
+
+<leader> n   open nerdtree
+
+<leader> k   highlight words
+<leader> K   cancel the highlight
+
+<C-p>        open ctrlp
+
+ss           start quick jump, depends on two chars
+
+y/c/d + s + object    surround punctuation
+
+:Far word anotherword **/*.py    refactor word in all files in the current dir
+
+:NeoFormat format the file
+
+gcc/gcgc comment and uncomment
